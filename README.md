@@ -9,7 +9,9 @@ Pulumi dynamic resource provider for custom Infrastructure as Code (IaC).
 
 # Usage
 
-1. [Install Pulumi](https://www.pulumi.com/docs/get-started/install/)
+1. Install Pulumi
+
+       brew install pulumi/tap/pulumi
 
 2. Clone repo
 
@@ -45,5 +47,6 @@ Pulumi dynamic resource provider for custom Infrastructure as Code (IaC).
 
 # Resources 
 
+- [Install Pulumi](https://www.pulumi.com/docs/get-started/install/)
 - [Pulumi Dynamic Providers](https://www.pulumi.com/docs/intro/concepts/resources/dynamic-providers/)
 - [How Pulumi works](https://www.pulumi.com/docs/intro/concepts/how-pulumi-works/)

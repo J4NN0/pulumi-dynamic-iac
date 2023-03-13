@@ -20,7 +20,7 @@ Pulumi dynamic resource provider for custom Infrastructure as Code (IaC).
 
        pulumi stack init
 
-    Not that if this is your first time running pulumi new or other pulumi commands, you may be prompted to log in to the Pulumi Service. After logging in, the CLI will proceed with walking you through creating a new project:
+    Not that if this is your first time running pulumi new or other pulumi commands, you may be prompted to log in to the Pulumi Service. After logging in, the CLI will proceed with walking you through creating a new stack:
 
    - You will be asked for a stack name. Hit `ENTER` to accept the default value of `dev`.
 

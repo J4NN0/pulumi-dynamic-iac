@@ -3,7 +3,7 @@ from pulumi.dynamic import *
 
 class _ItemProviderInputs(object):
     """
-    It is the unwrapped version of the same inputs from the ResourceInputs class.
+    It is the unwrapped version of the same inputs from the ItemInputs class.
     """
     item_id: str
     name: str
@@ -28,16 +28,13 @@ class ItemProvider(ResourceProvider):
         """
 
         failures = []
-        valid_inputs = {}
 
         for key in {**news}:
             value = {**news}[key]
             if not value:
                 failures.append(CheckFailure(property_=key, reason="Property's value cannot be emtpy"))
-            else:
-                valid_inputs[key] = value
 
-        return CheckResult(inputs=valid_inputs, failures=failures)
+        return CheckResult(inputs={**news}, failures=failures)
 
     def create(self, inputs: _ItemProviderInputs) -> CreateResult:
         """
@@ -46,6 +43,7 @@ class ItemProvider(ResourceProvider):
         :return: a set of outputs from the backing provider
         """
 
+        # Call provider (e.g. HTTP POST to create entity)
         return CreateResult(id_=inputs["item_id"], outs={**inputs})
 
     def update(self, _id: str, _olds: _ItemProviderInputs, _news: _ItemProviderInputs) -> UpdateResult:
@@ -57,6 +55,7 @@ class ItemProvider(ResourceProvider):
         :return: new set of outputs
         """
 
+        # Call provider (e.g. HTTP PUT/PATCH to update entity)
         return UpdateResult({**_news})
 
     def delete(self, _id: str, _props: _ItemProviderInputs) -> None:
@@ -66,4 +65,6 @@ class ItemProvider(ResourceProvider):
         :param _id: id of the resource as returned by create method
         :param _props: the old outputs from the checkpoint file
         """
+
+        # Call provider (e.g. HTTP DELETE to delete entity)
         pass

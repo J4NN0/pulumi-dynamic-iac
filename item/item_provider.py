@@ -43,7 +43,7 @@ class ItemProvider(ResourceProvider):
         :return: a set of outputs from the backing provider
         """
 
-        # Call provider (e.g. HTTP POST to create entity)
+        # Call your external provider (e.g. HTTP POST to create entity)
         return CreateResult(id_=inputs["item_id"], outs={**inputs})
 
     def update(self, _id: str, _olds: _ItemProviderInputs, _news: _ItemProviderInputs) -> UpdateResult:
@@ -55,7 +55,7 @@ class ItemProvider(ResourceProvider):
         :return: new set of outputs
         """
 
-        # Call provider (e.g. HTTP PUT/PATCH to update entity)
+        # Call your external provider (e.g. HTTP PUT/PATCH to update entity)
         return UpdateResult({**_news})
 
     def delete(self, _id: str, _props: _ItemProviderInputs) -> None:
@@ -66,5 +66,5 @@ class ItemProvider(ResourceProvider):
         :param _props: the old outputs from the checkpoint file
         """
 
-        # Call provider (e.g. HTTP DELETE to delete entity)
+        # Call your external provider (e.g. HTTP DELETE to delete entity)
         pass

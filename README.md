@@ -1,4 +1,4 @@
-# pulumi-dynamic-iac
+# Pulumi Dynamic IaC
 
 Pulumi dynamic resource provider for custom Infrastructure as Code (IaC).
 
